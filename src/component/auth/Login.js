@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react"
 import { Link, useHistory } from "react-router-dom";
 import "./Login.css"
 
-
 export const Login = () => {
     const [loginUser, setLoginUser] = useState({ email: "" })
     const [existDialog, setExistDialog] = useState(false)
@@ -58,7 +57,7 @@ export const Login = () => {
                             value={loginUser.email}
                             onChange={handleInputChange} />
                     </fieldset>
-                    <fieldset>
+                    <fieldset className="sign_btn">
                         <button className="sign_in" type="submit">
                             Sign in
                         </button>

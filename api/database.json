@@ -31,23 +31,23 @@
             "childId": 1,
             "reasonForAppointment": "fever",
             "hospitalId": 1,
-            "appoinmentDate": "10/27/2021",
+            "date": "10/27/2021",
             "time": "8:00am"
         },
         {
             "id": 2,
             "childId": 2,
             "reasonForAppointment": "cough",
-            "hospitalId": 1,
-            "appoinmentDate": "10/28/2021",
+            "hospitalId": 2,
+            "date": "10/28/2021",
             "time": "9:00am"
         },
         {
             "id": 3,
             "childId": 3,
             "reasonForAppointment": "weigt loss",
-            "hospitalId": 1,
-            "appoinmentDate": "10/29/2021",
+            "hospitalId": 3,
+            "date": "10/29/2021",
             "time": "10:00am"
         }
     ],
