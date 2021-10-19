@@ -1,0 +1,52 @@
+
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+
+.navbar {
+    
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: left;
+        background-color:rgb(187, 178, 178);
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: large;
+         font-family: Verdana, Geneva, Tahoma, sans-serif;
+         text-align: center;
+}
+nav li {
+    list-style: none;
+}
+
+.navbar__item {
+    flex-basis: 20%;
+    list-style-type: none;
+    color: black;
+ 
+}
+ul {
+    display: flex; 
+     
+}
+
+
+ a:link {
+    color: rgb(231, 142, 58);
+    background-color: transparent;
+    text-decoration: none;
+  } 
+
+  a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+  } 
+
+  a:hover {
+    color: grey;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  a.nav-link {
+    color:black;
+  }

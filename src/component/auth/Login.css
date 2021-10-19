@@ -8,6 +8,10 @@
    color: white;
    font-size: 1em;
  }
+ .home-style {
+     color: orange;
+     font-size: 2.5em;
+ }
 
 .register_link {
    color: orange;
@@ -38,7 +42,13 @@ form.form--login {
   margin-bottom: 1%;
   padding-left: 2%;
   padding-right: 2%;
+  
 }
+.sign_btn {
+    width: 250px;
+    border: none;
+}
+
 
 .main_login {
   color: rgb(185, 138, 51);
@@ -53,9 +63,12 @@ form.form--login {
 .sign_in_button {
   background-color: black;
   color: white;
+  
 }
 
 .login_form {
   font-weight: bold;
   color: black;
+  width: 250px;
+  border: none;
 }
