@@ -8,7 +8,7 @@ export const getAppointmentById = (appointmentId) => {
 }
 
 export const getAllAppointments = () => {
-    return fetch(`${remoteURL}/appointments`)
+    return fetch(`${remoteURL}/appointments?_expand=child&_expand=hospital`)
         .then(res => res.json())
 }
 

@@ -2,14 +2,21 @@ import React, { useState, useEffect } from "react"
 import { useParams, useHistory } from "react-router-dom"
 import { getAppointmentById } from "./AppointmentManager"
 import { update } from "./AppointmentManager"
+import "./AppointmentEditForm.css"
+import { getAllChildren } from '../Child/ChildManager';
+import { getAllHospitals } from '../Hospital/HospitalManager';
+
+
 
 
 export const AppointmentEditForm = () => {
-    const [appointment, setAppointment] = useState({ reasonForAppointment: "", date: "", time: "" });
+    const [appointment, setAppointment] = useState({ childId: "", reasonForAppointment: "", hospitalId: "", date: "", time: "" });
     const [isLoading, setIsLoading] = useState(false);
     // "isLoading" is showing user data is being loaded but is not fully loaded yet
     const { appointmentId } = useParams();
     // useParams lets you access parameters of current <route>
+    const [Children, setChildren] = useState([]);
+    const [hospitals, setHospitals] = useState([]);
     const history = useHistory();
     // useHistory all the URL visited on DOM
     const handleFieldChange = evt => {
@@ -25,6 +32,9 @@ export const AppointmentEditForm = () => {
         // This is an edit, so we need the id
         const editedAppointment = {
             id: appointmentId,
+            childId: appointment.childId,
+            reasonForAppointment: appointment.reasonForAppointment,
+            hospitalId: appointment.hospitalId,
             date: appointment.date,
             time: appointment.time
 
@@ -35,6 +45,19 @@ export const AppointmentEditForm = () => {
                 // history.push pushes this URL onto all the history in the DOM
             )
     }
+    useEffect(() => {
+        //load hospital data and setState
+        getAllHospitals().then(hospitals => {
+            setHospitals(hospitals)
+        })
+    }, []);
+
+    useEffect(() => {
+        //load child data and setState
+        getAllChildren().then(children => {
+            setChildren(children)
+        })
+    }, []);
     // useEffect tells react component it needs to do something after rendering
     useEffect(() => {
         getAppointmentById(appointmentId)
@@ -49,6 +72,17 @@ export const AppointmentEditForm = () => {
             <form>
                 <fieldset>
                     <div className="formgrid">
+                        <label htmlFor="children">Child: </label>
+                        <select value={appointment.childId} name="childId" id="childId" onChange={handleFieldChange}
+                            className="form-control" >
+                            <option value="0">Select a child</option>
+                            {Children.map(child => (
+                                <option key={child.id} value={child.id}>
+                                    {child.firstName} {child.lastName}
+                                </option>
+                            ))}
+                        </select>
+
                         <input
                             type="text"
                             required
@@ -59,6 +93,17 @@ export const AppointmentEditForm = () => {
                         />
                         <label htmlFor="reasonForAppointment">Reason For Appointment</label>
 
+                        <label htmlFor="hospital">Hospital: </label>
+                        <select value={appointment.hospitalId} name="hospitalId" id="hospitalId" onChange={handleFieldChange}
+                            className="form-control" >
+                            <option value="0">Select Hospital</option>
+                            {hospitals.map(l => (
+                                <option key={l.id} value={l.id}>
+                                    {l.name}
+                                </option>
+                            ))}
+                        </select>
+
                         <input
                             type="date"
                             required
@@ -67,7 +112,7 @@ export const AppointmentEditForm = () => {
                             id="date"
                             value={appointment.date}
                         />
-                        <label htmlFor="synopsis">Date</label>
+                        <label htmlFor="date">Date</label>
 
                         <input
                             type="time"

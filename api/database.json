@@ -27,23 +27,34 @@
   ],
   "appointments": [
     {
-      "id": 2,
-      "date": "2021-10-20",
-      "time": "00:43"
+      "id": 4,
+      "childId": 1,
+      "reasonForAppointment": "cough and fever",
+      "hospitalId": "2",
+      "date": "2021-10-22",
+      "time": "00:03"
     },
     {
-      "id": 3,
-      "childId": 3,
-      "reasonForAppointment": "weigt loss",
+      "id": 8,
+      "childId": 1,
+      "reasonForAppointment": "Headache and cough",
+      "hospitalId": 1,
+      "date": "2021-10-15",
+      "time": "14:13"
+    },
+    {
+      "childId": 2,
+      "reasonForAppointment": "nausea",
       "hospitalId": 3,
-      "date": "10/29/2021",
-      "time": "10:00am"
+      "date": "2021-10-11",
+      "time": "11:50",
+      "id": 9
     }
   ],
   "hospitals": [
     {
       "id": 1,
-      "name": "Stone Crest",
+      "name": "Stone Crest Medical Center",
       "location": "Smyrna,TN"
     },
     {
@@ -57,7 +68,7 @@
       "location": "Franklin,TN"
     }
   ],
-  "child": [
+  "children": [
     {
       "id": 1,
       "userId": 1,
@@ -71,6 +82,13 @@
       "firstName": "Michelle",
       "lastName": "James",
       "dateOfBirth": "10/12/2015"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "firstName": "Eden",
+      "lastName": "Nina",
+      "dateOfBirth": "10/29/2015"
     }
   ]
 }
