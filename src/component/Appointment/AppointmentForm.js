@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { addAppointment } from './AppointmentManager';
-import { getAllChilds } from '../Child/ChildManager';
+import { getAllChildren } from '../Child/ChildManager';
 import { getAllHospitals } from '../Hospital/HospitalManager';
 
 
@@ -18,10 +18,10 @@ export const AppointmentForm = () => {
 
     });
 
-    const [isLoading, setIsLoading] = useState(false);
+    //const [isLoading, setIsLoading] = useState(false);
 
     // you will need the the `getAll` in the hospitalManager and ChildManager to complete this section
-    const [childs, setChilds] = useState([]);
+    const [children, setChildren] = useState([]);
     const [hospitals, setHospitals] = useState([]);
 
     const history = useHistory();
@@ -55,8 +55,8 @@ export const AppointmentForm = () => {
 
     useEffect(() => {
         //load child data and setState
-        getAllChilds().then(childs => {
-            setChilds(childs)
+        getAllChildren().then(children => {
+            setChildren(children)
         })
     }, []);
 
@@ -82,6 +82,20 @@ export const AppointmentForm = () => {
             <h2 className="appointmentForm__title">New Appointment</h2>
             <fieldset>
                 <div className="form-group">
+                    <label htmlFor="children">Child: </label>
+                    <select value={appointment.childId} name="childId" id="childId" onChange={handleControlledInputChange}
+                        className="form-control" >
+                        <option value="0">Select a child</option>
+                        {children.map(child => (
+                            <option key={child.id} value={child.id}>
+                                {child.firstName} {child.lastName}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
                     <label htmlFor="reasonForappointment">Reason For Appointment:</label>
                     <input type="text" id="reasonForAppointment" onChange={handleControlledInputChange}
                         required autoFocus className="form-control" placeholder="reason for Appointment" value={appointment.reasonForAppointment} />
@@ -96,7 +110,7 @@ export const AppointmentForm = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="time">Date:</label>
+                    <label htmlFor="time">Time:</label>
                     <input type="time" id="time" onChange={handleControlledInputChange}
                         required autoFocus className="form-control" placeholder="time" value={appointment.time} />
                 </div>
@@ -114,19 +128,7 @@ export const AppointmentForm = () => {
                     </select>
                 </div>
             </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="childId">Child: </label>
-                    <select value={appointment.childId} name="child" id="childId" onChange={handleControlledInputChange} className="form-control" >
-                        <option value="0">Select a child</option>
-                        {childs.map(child => (
-                            <option key={child.id} value={child.id}>
-                                {child.name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-            </fieldset>
+
             <button className="btn btn-primary"
                 onClick={handleClickSaveAppointment}>
                 Save Appointment
