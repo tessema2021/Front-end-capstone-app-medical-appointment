@@ -44,7 +44,7 @@ export const Register = () => {
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
                                 // The user id is saved under the key medicalappointment_user in session Storage. Change below if needed!
-                                sessionStorage.setItem("nutshell_user", createdUser.id)
+                                sessionStorage.setItem("medical_appointment_user", createdUser.id)
                                 history.push("/")
                             }
                         })
@@ -65,7 +65,7 @@ export const Register = () => {
             </dialog>
 
             <form className="form--login" onSubmit={handleRegister}>
-                <h3 className="register_h3">Please Register for Appointment</h3>
+                <h4 className="register_h3">Please Register Account </h4>
                 <fieldset className="register_section">
                     <label htmlFor="firstName"> First Name </label>
                     <input type="text" name="firstName" id="firstName" className="form-control" placeholder="First name" required autoFocus value={registerUser.firstName} onChange={handleInputChange} />
@@ -79,7 +79,7 @@ export const Register = () => {
                     <input type="email" name="email" id="email" className="form-control" placeholder="Email address" required value={registerUser.email} onChange={handleInputChange} />
                 </fieldset>
                 <fieldset>
-                    <button className="sign_in_button" type="submit"> Sign in </button>
+                    <button className="sign_in_button" type="submit"> Summit </button>
                 </fieldset>
             </form>
         </main>

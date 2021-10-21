@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getAllAppointments, deleteAppointment } from "./AppointmentManager"
 import { AppointmentCard } from './AppointmentCard';
 import { useHistory } from 'react-router';
+import "./AppointmentList.css"
 
 export const AppointmentList = () => {
 

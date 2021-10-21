@@ -1,14 +1,18 @@
 import React from "react";
+import logo from "../Images/HH_logo.png"
+import "./Home.css"
+
+
+
 
 
 export const Home = () => {
 
+
     return (
         <>
-
-            <h2 className="home-style">Welcome To Our Site Where Making Appointment is Simple </h2>
-
-
+            <h4 className="welcome">Welcome </h4>
+            {/* <img className="logo" src={logo} alt="log"></img> */}
         </>
     )
 }

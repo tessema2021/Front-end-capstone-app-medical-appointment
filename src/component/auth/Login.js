@@ -1,9 +1,9 @@
-import React, { useRef, useState } from "react"
+import React, { useState } from "react"
 import { Link, useHistory } from "react-router-dom";
 import "./Login.css"
 
 export const Login = () => {
-    const [loginUser, setLoginUser] = useState({ email: "" })
+    const [loginUser, setLoginUser] = useState({ name: "", email: "" })
     const [existDialog, setExistDialog] = useState(false)
 
     const history = useHistory()
@@ -28,7 +28,7 @@ export const Login = () => {
         existingUserCheck()
             .then(exists => {
                 if (exists) {
-                    // The user id is saved under the key nutshell_user in session Storage. Change below if needed!
+                    // The user id is saved under the key medical_appointment_user in session Storage. Change below if needed!
                     sessionStorage.setItem("medical_appointment_user", exists.id)
                     history.push("/")
                 } else {
@@ -45,9 +45,16 @@ export const Login = () => {
             </dialog>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h3 className="main_login">Complete The Appointment Form</h3>
-                    <h2 className="please_sign_in">Please sign in</h2>
+                    <h3 className="main_login">Please sign in</h3>
                     <fieldset className="login_form">
+                        <label htmlFor="inputName"> Full Name </label>
+                        <input type="name"
+                            id="name"
+                            className="form-control"
+                            placeholder="Full Name"
+                            required autoFocus
+                            value={loginUser.name}
+                            onChange={handleInputChange} />
                         <label htmlFor="inputEmail"> Email address </label>
                         <input type="email"
                             id="email"
