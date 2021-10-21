@@ -30,7 +30,7 @@ export const addChild = (newchild) => {
 }
 
 export const update = (editedChild) => {
-    return fetch(`${remoteURL}/childrens/${editedChild.id}`, {
+    return fetch(`${remoteURL}/children/${editedChild.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
