@@ -21,7 +21,7 @@ export const ChildCard = ({ children, handleDeleteChildren }) => {
                 <button className="details-button-event">Details</button>
             </Link> */}
             <button className="edit-button-children" type="button"
-                onClick={() => history.push(`/children/edit/${children.id}`)}>
+                onClick={() => history.push(`/children/${children.id}/edit`)}>
                 Edit
             </button>
             <button type="button" onClick={() => handleDeleteChildren(children.id)}>Delete</button>

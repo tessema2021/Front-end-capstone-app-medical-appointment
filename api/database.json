@@ -2,20 +2,17 @@
   "users": [
     {
       "id": 1,
-      "firstName": "Tessem",
-      "lastName": "fuchere",
+      "name": "Tessem Fuchere",
       "email": "tf@gmail.com"
     },
     {
       "id": 2,
-      "firstName": "Eden",
-      "lastName": "Nina",
+      "name": "Eden Nina",
       "email": "en@gmail.com"
     },
     {
       "id": 3,
-      "firstName": "Jhon",
-      "lastName": "Bolt",
+      "name": "Jhon Bolt",
       "email": "jb@gmail.com"
     },
     {
@@ -23,6 +20,11 @@
       "firstName": "Miheret",
       "lastName": "Doraa",
       "email": "md@gmail.com"
+    },
+    {
+      "email": "th@gmail.com",
+      "name": "tge haji",
+      "id": 5
     }
   ],
   "appointments": [
@@ -49,6 +51,30 @@
       "date": "2021-10-11",
       "time": "11:50",
       "id": 9
+    },
+    {
+      "childId": 3,
+      "reasonForAppointment": "nausea",
+      "hospitalId": 2,
+      "date": "2021-10-30",
+      "time": "09:15",
+      "id": 10
+    },
+    {
+      "childId": 2,
+      "reasonForAppointment": "Headache and cough",
+      "hospitalId": 1,
+      "date": "2021-10-30",
+      "time": "09:15",
+      "id": 11
+    },
+    {
+      "childId": 2,
+      "reasonForAppointment": "Headache and cough",
+      "hospitalId": 1,
+      "date": "2021-10-25",
+      "time": "08:18",
+      "id": 12
     }
   ],
   "hospitals": [
@@ -70,22 +96,22 @@
   ],
   "children": [
     {
-      "id": 1,
       "userId": 1,
+      "id": 1,
       "firstName": "Lulu",
       "lastName": "Bolt",
       "dateOfBirth": "10/12/2015"
     },
     {
+      "userId": 1,
       "id": 2,
-      "userId": 2,
       "firstName": "Michelle",
       "lastName": "James",
       "dateOfBirth": "10/12/2015"
     },
     {
+      "userId": 1,
       "id": 3,
-      "userId": 3,
       "firstName": "Eden",
       "lastName": "Nina",
       "dateOfBirth": "10/29/2015"

@@ -26,6 +26,7 @@ export const ChildrenEditForm = () => {
 
         // This is an edit, so we need the id
         const editedChildren = {
+            userId: parseInt(sessionStorage.getItem("medical_appointment_user")),
             id: childrenId,
             firstName: children.firstName,
             lastName: children.lastName,
@@ -44,7 +45,7 @@ export const ChildrenEditForm = () => {
                 setChildren(children);
                 setIsLoading(false);
             });
-    }, [childrenId]);
+    }, []);
 
     return (
         <>
@@ -56,7 +57,7 @@ export const ChildrenEditForm = () => {
                             required
                             className="form-control"
                             onChange={handleFieldChange}
-                            id="name"
+                            id="firstName"
                             value={children.firstName}
                         />
                         <label htmlFor="title">Child First Name</label>
@@ -65,7 +66,7 @@ export const ChildrenEditForm = () => {
                             required
                             className="form-control"
                             onChange={handleFieldChange}
-                            id="name"
+                            id="lastName"
                             value={children.lastName}
                         />
                         <label htmlFor="title">Child Last Name</label>
@@ -75,7 +76,7 @@ export const ChildrenEditForm = () => {
                             required
                             className="form-control"
                             onChange={handleFieldChange}
-                            id="date"
+                            id="dateOfBirth"
                             value={children.dateOfBirth}
                         />
                         <label htmlFor="date">Date Of Birth</label>
