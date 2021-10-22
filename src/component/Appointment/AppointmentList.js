@@ -10,10 +10,12 @@ export const AppointmentList = () => {
     const history = useHistory();
 
     const getAppointments = () => {
+        // After the data comes back from the API, we
+        //     //  use the setArticles function to update state
         return getAllAppointments().then(appointmentsFromAPI => {
             // We'll do something more interesting with this data soon.
-            console.log(appointmentsFromAPI);
-            setAppointments(appointmentsFromAPI);
+            const sortedActivities = appointmentsFromAPI.sort((a, b) => b.timestamp - a.timestamp)
+            setAppointments(sortedActivities);
         });
     };
 
@@ -35,7 +37,7 @@ export const AppointmentList = () => {
 
             <section className="section-content">
                 <button type="button"
-                    className="btn"
+                    className="add-btn"
                     onClick={() => { history.push("/appointments/create") }}>
                     Add Appointment
                 </button>

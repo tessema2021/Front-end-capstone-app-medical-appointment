@@ -21,6 +21,7 @@
 form.form--login {
   padding-left: 30%;
   margin-top: 2cm;
+  
 }
 
 .register_h3 {
@@ -45,8 +46,10 @@ form.form--login {
   
 }
 .sign_btn {
-    width: 250px;
+    width: 300px;
     border: none;
+    margin-left: 20px;
+    
 }
 
 
@@ -67,8 +70,10 @@ form.form--login {
 }
 
 .login_form {
+  margin-left: 20px;
   font-weight: bold;
   color: black;
-  width: 250px;
+  width: 300px;
   border: none;
+  
 }

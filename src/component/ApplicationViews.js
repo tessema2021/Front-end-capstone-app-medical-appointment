@@ -9,6 +9,9 @@ import { AppointmentForm } from "./Appointment/AppointmentForm";
 import { ChildrenList } from "./Child/ChildList";
 import { ChildrenEditForm } from "./Child/ChildeditForm";
 import { ChildForm } from "./Child/ChildForm";
+import { ReviewList } from "./Review/ReviewList";
+import { ReviewForm } from "./Review/ReviewForm";
+import { ReviewEditForm } from "./Review/ReviewEditForm";
 
 
 
@@ -50,6 +53,16 @@ export const ApplicationViews = ({ isAuthenticated, setAuthUser }) => {
             </Route>
             <Route exact path="/children/:childrenId(\d+)/edit">
                 <ChildrenEditForm />
+            </Route>
+            {/* Render children list when http://localhost:8088/appointments */}
+            <Route exact path="/reviews">
+                <ReviewList />
+            </Route>
+            <Route exact path="/reviews/create">
+                <ReviewForm />
+            </Route>
+            <Route exact path="/reviews/:reviewId(\d+)/edit">
+                <ReviewEditForm />
             </Route>
         </>
 
