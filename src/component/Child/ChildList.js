@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getAllChildren, deletechild } from "./ChildManager"
 import { ChildCard } from './ChildCard';
 import { useHistory } from 'react-router';
+import "./ChildList.css"
 
 
 export const ChildrenList = () => {
@@ -35,7 +36,7 @@ export const ChildrenList = () => {
 
             <section className="section-content">
                 <button type="button"
-                    className="btn"
+                    className="add-btn"
                     onClick={() => { history.push("/children/create") }}>
                     Add Child
                 </button>

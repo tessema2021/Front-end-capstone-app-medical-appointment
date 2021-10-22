@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../Images/HH_logo.png"
+import logo from "../Images/medical.jpg"
 import "./Home.css"
 
 

@@ -1,0 +1,35 @@
+.child_card {
+    width: 200px;
+    height: 140px;
+    background-color: cadetblue;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:space-around;
+    border-style: solid;
+    border-color: darkcyan;
+    border-radius: 10px;
+    margin-top: 3%;
+    margin-left: 2%;
+    text-align: center;
+}
+.button-edit {
+    border-radius: 5px;
+    background-color: rgb(180, 206, 180);
+}
+.button-edit:hover {
+    background-color: blue;
+  }
+.button-delete {
+    border-radius: 5px;
+    background-color: rgb(180, 206, 180);
+    
+}
+.button-delete:hover {
+    background-color: blue;
+  }
+.child_card{
+    width: 180px;
+}
+.child__name {
+    margin-right: 15px;
+}

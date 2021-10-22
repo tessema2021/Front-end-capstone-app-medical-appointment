@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link, useHistory } from "react-router-dom";
 import "./Login.css"
 
-export const Login = () => {
+export const Login = ({ setAuthUser }) => {
     const [loginUser, setLoginUser] = useState({ name: "", email: "" })
     const [existDialog, setExistDialog] = useState(false)
 
@@ -30,6 +30,7 @@ export const Login = () => {
                 if (exists) {
                     // The user id is saved under the key medical_appointment_user in session Storage. Change below if needed!
                     sessionStorage.setItem("medical_appointment_user", exists.id)
+                    setAuthUser(exists)
                     history.push("/")
                 } else {
                     setExistDialog(true)
@@ -45,7 +46,7 @@ export const Login = () => {
             </dialog>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h3 className="main_login">Please sign in</h3>
+                    <h4 className="main_login">Please sign in</h4>
                     <fieldset className="login_form">
                         <label htmlFor="inputName"> Full Name </label>
                         <input type="name"
