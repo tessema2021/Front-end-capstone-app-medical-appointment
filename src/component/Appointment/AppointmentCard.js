@@ -26,13 +26,13 @@ export const AppointmentCard = ({ appointment, handleDeleteAppointment }) => {
             </button>
             <button className="button-delete" type="button" onClick={() => handleDeleteAppointment(appointment.id)}>Delete</button>
             {/* </div>
-                <div class="flip-card-back">
+                {/* <div class="flip-card-back">
                     <p>Make sure to show up</p>
                     <p>15 minute early</p>
                     <p>We exacted to see you soon</p>
-                </div>
-            </div> */}
-        </div>
+                </div> */}
+            {/* </div > */}
+        </div >
     )
 }
 

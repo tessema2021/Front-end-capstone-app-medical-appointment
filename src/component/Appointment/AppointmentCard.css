@@ -13,8 +13,8 @@
     text-align: center;
 }
 
-
-/* .appointment_card {
+/*  
+.appointment_card {
     background-color: transparent;
     width: 220px;
     height: 300px;
@@ -49,8 +49,8 @@
     color: black;
   }
   
-  .flip-card-back {
+   .flip-card-back {
     background-color: #2980b9;
     color: white;
-     transform: rotateY(180deg); 
+     transform: rotateY(180deg);  
   } */
