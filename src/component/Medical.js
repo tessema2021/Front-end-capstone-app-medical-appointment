@@ -11,6 +11,7 @@ export const Medical = () => {
 
     const setAuthUser = (user) => {
         sessionStorage.setItem("medical_appointment_user", JSON.stringify(user))
+        sessionStorage.setItem("current_user", user.id)
         setIsAuthenticated(sessionStorage.getItem("medical_appointment_user") !== null)
     }
 
@@ -22,7 +23,7 @@ export const Medical = () => {
     return (
         <>
             <img className="logo" src={logo}></img>
-            <h1 className="home-style"> Welcome To Our Site Where Making Appointment is Simple</h1>
+            <h3 className="home-style"> Medical Appointment App</h3>
             <NavBar clearUser={clearUser} isAuthenticated={isAuthenticated} />
             <ApplicationViews setAuthUser={setAuthUser} isAuthenticated={isAuthenticated} />
         </>

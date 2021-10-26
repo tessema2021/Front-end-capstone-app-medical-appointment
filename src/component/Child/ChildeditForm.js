@@ -26,7 +26,7 @@ export const ChildrenEditForm = () => {
 
         // This is an edit, so we need the id
         const editedChildren = {
-            userId: parseInt(sessionStorage.getItem("medical_appointment_user")),
+            userId: JSON.parse(sessionStorage.getItem("medical_appointment_user")).id,
             id: childrenId,
             firstName: children.firstName,
             lastName: children.lastName,

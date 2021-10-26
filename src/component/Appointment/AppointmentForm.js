@@ -3,13 +3,15 @@ import { useHistory } from 'react-router-dom';
 import { addAppointment } from './AppointmentManager';
 import { getAllChildren } from '../Child/ChildManager';
 import { getAllHospitals } from '../Hospital/HospitalManager';
+import "./AppointmentForm.css"
 
 
 export const AppointmentForm = () => {
     // State will contain both appointment data as well as an isLoading flag.
     // Define the initial state of the form inputs with useState()
-
+    let user = parseInt(sessionStorage.getItem("current_user"))
     const [appointment, setAppointment] = useState({
+        userId: user,
         childId: 1,
         reasonForAppointment: "",
         hospitalId: 1,
@@ -38,12 +40,18 @@ export const AppointmentForm = () => {
         if (event.target.id.includes("Id")) {
             selectedVal = parseInt(selectedVal)
         }
-        /* Customer is an object with properties.
+        /* appointment is an object with properties.
         Set the property to the new value
         using object bracket notation. */
         newAppointment[event.target.id] = selectedVal
         // update state
         setAppointment(newAppointment)
+    }
+
+    const getUserChildren = () => {
+        return getAllChildren(user).then(response => {
+            setChildren(response)
+        })
     }
 
     useEffect(() => {
@@ -55,9 +63,8 @@ export const AppointmentForm = () => {
 
     useEffect(() => {
         //load child data and setState
-        getAllChildren().then(children => {
-            setChildren(children)
-        })
+        getUserChildren();
+
     }, []);
 
 
@@ -129,7 +136,7 @@ export const AppointmentForm = () => {
                 </div>
             </fieldset>
 
-            <button className="btn btn-primary"
+            <button className="save-btn"
                 onClick={handleClickSaveAppointment}>
                 Save Appointment
             </button>

@@ -8,9 +8,10 @@ export const ReviewList = () => {
 
     const [reviews, setReviews] = useState([]);
     const history = useHistory();
+    const loggedInUser = JSON.parse(sessionStorage.getItem("medical_appointment_user"))
 
     const getReviews = () => {
-        return getAllReviews().then(reviewsFromAPI => {
+        return getAllReviews(loggedInUser.id).then(reviewsFromAPI => {
             // We'll do something more interesting with this data soon.
             console.log(reviewsFromAPI);
             setReviews(reviewsFromAPI);
