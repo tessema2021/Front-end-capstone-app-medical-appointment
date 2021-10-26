@@ -9,12 +9,13 @@ export const ChildrenList = () => {
 
     const [child, setChildren] = useState([]);
     const history = useHistory();
-
+    const loggedInUser = JSON.parse(sessionStorage.getItem("medical_appointment_user"))
     const getChildren = () => {
-        return getAllChildren().then(childrenFromAPI => {
+        return getAllChildren(loggedInUser.id).then(childrenFromAPI => {
             // We'll do something more interesting with this data soon.
-            console.log(childrenFromAPI);
-            setChildren(childrenFromAPI);
+            const sortedActivities = childrenFromAPI.sort((a, b) => new Date(a.date) - new Date(b.date))
+            setChildren(sortedActivities);
+
         });
     };
 

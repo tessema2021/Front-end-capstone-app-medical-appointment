@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router";
+import "./ReviewCard.css"
 
 
 export const ReviewCard = ({ review, handleDeleteReview }) => {
@@ -10,6 +11,7 @@ export const ReviewCard = ({ review, handleDeleteReview }) => {
     }
     return (
         <div className="review_card">
+            <p className="review_schedule">Name of Hospital: {review.hospital.name} </p>
             <p className="review_schedule">How easy was to schedule appointment: {review.howEasyWasToScheduleAppointment} </p>
             <p className="review_schedule">How long did you wait: {review.howLongDidYouWait} </p>
             <p className="review_schedule">How satisfied are you: {review.howSatisfiedAreYou} </p>

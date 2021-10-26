@@ -33,6 +33,7 @@ export const ReviewEditForm = () => {
 
         // This is an edit, so we need the id
         const editedReview = {
+            userId: JSON.parse(sessionStorage.getItem("medical_appointment_user")).id,
             id: reviewId,
             hospitalId: review.hospitalId,
             howEasyWasToScheduleAppointment: review.howEasyWasToScheduleAppointment,
@@ -92,7 +93,7 @@ export const ReviewEditForm = () => {
                         <label htmlFor="howEasyWasToScheduleAppointment">How easy was to schedule appointment</label>
 
                         <input
-                            type="time"
+                            type="text"
                             required
                             className="form-control"
                             onChange={handleFieldChange}

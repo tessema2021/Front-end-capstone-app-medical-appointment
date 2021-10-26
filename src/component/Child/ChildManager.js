@@ -2,13 +2,13 @@
 const remoteURL = "http://localhost:8088"
 //
 export const getChildById = (childId) => {
-    return fetch(`${remoteURL}/children/${childId}`)
+    return fetch(`${remoteURL}/children/${childId}?_expand=user`)
         .then(res => res.json())
 
 }
 
-export const getAllChildren = () => {
-    return fetch(`${remoteURL}/children`)
+export const getAllChildren = (id) => {
+    return fetch(`${remoteURL}/children?_expand=user&userId=${id}`)
         .then(res => res.json())
 }
 

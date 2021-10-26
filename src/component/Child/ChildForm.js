@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { addChild } from './ChildManager';
+import "./ChildList.css"
 
 
 export const ChildForm = () => {
@@ -8,6 +9,7 @@ export const ChildForm = () => {
     // Define the initial state of the form inputs with useState()
 
     const [children, setChildren] = useState({
+        userId: JSON.parse(sessionStorage.getItem("medical_appointment_user")).id,
         firstName: "",
         lastName: "",
         dateOfBirth: ""
@@ -67,7 +69,7 @@ export const ChildForm = () => {
                     <input type="date" id="dateOfBirth" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="dateOfBirth" value={children.dateOfBirth} />
                 </div>
             </fieldset>
-            <button className="btn btn-primary"
+            <button className="save-btn"
                 onClick={handleClickSaveChild}>
                 Save  Child
             </button>

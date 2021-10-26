@@ -1,0 +1,14 @@
+.appointmentForm{
+    width: 400px;
+    margin-bottom: 8px;
+    padding: auto;
+    margin-left: 300px;
+    background-color: rgb(21, 21, 29);
+    border-radius: 8px;
+}
+.save-btn {
+    color: white;
+    border-radius: 5px;
+    background-color: rgb(8, 8, 167);
+    border-style: none;
+}

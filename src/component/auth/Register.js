@@ -5,7 +5,7 @@ import "./Login.css"
 
 export const Register = () => {
 
-    const [registerUser, setRegisterUser] = useState({ firstName: "", lastName: "", email: "" })
+    const [registerUser, setRegisterUser] = useState({ name: "", email: "" })
     const [conflictDialog, setConflictDialog] = useState(false)
 
     const history = useHistory()
@@ -18,7 +18,7 @@ export const Register = () => {
 
     const existingUserCheck = () => {
         // If your json-server URL is different, please change it below!
-        return fetch(`http://localhost:8088/users?email=${registerUser.email}`)
+        return fetch(`http://localhost:8088/users?email=${registerUser.email}&name=${registerUser.name}`)
             .then(res => res.json())
             .then(user => !!user.length)
     }
@@ -37,7 +37,7 @@ export const Register = () => {
                         },
                         body: JSON.stringify({
                             email: registerUser.email,
-                            name: `${registerUser.firstName} ${registerUser.lastName}`
+                            name: `${registerUser.name}`
                         })
                     })
                         .then(res => res.json())
@@ -67,13 +67,10 @@ export const Register = () => {
             <form className="form--login" onSubmit={handleRegister}>
                 <h4 className="register_h3">Please Register Account </h4>
                 <fieldset className="register_section">
-                    <label htmlFor="firstName"> First Name </label>
-                    <input type="text" name="firstName" id="firstName" className="form-control" placeholder="First name" required autoFocus value={registerUser.firstName} onChange={handleInputChange} />
+                    <label htmlFor="inputName"> Full Name </label>
+                    <input type="text" name="name" id="name" className="form-control" placeholder="Full Name" required autoFocus value={registerUser.name} onChange={handleInputChange} />
                 </fieldset>
-                <fieldset>
-                    <label className="register_section" htmlFor="lastName"> Last Name </label>
-                    <input type="text" name="lastName" id="lastName" className="form-control" placeholder="Last name" required value={registerUser.lastName} onChange={handleInputChange} />
-                </fieldset>
+
                 <fieldset>
                     <label className="register_section" htmlFor="inputEmail"> Email address </label>
                     <input type="email" name="email" id="email" className="form-control" placeholder="Email address" required value={registerUser.email} onChange={handleInputChange} />

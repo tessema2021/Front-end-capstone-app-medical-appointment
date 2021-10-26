@@ -10,7 +10,12 @@ import { getAllHospitals } from '../Hospital/HospitalManager';
 
 
 export const AppointmentEditForm = () => {
-    const [appointment, setAppointment] = useState({ childId: "", reasonForAppointment: "", hospitalId: "", date: "", time: "" });
+    const [appointment, setAppointment] = useState(
+        {
+
+            childId: "", reasonForAppointment: "",
+            hospitalId: "", date: "", time: ""
+        });
     const [isLoading, setIsLoading] = useState(false);
     // "isLoading" is showing user data is being loaded but is not fully loaded yet
     const { appointmentId } = useParams();

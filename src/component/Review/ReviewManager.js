@@ -7,8 +7,8 @@ export const getReviewById = (reviewId) => {
 
 }
 
-export const getAllReviews = () => {
-    return fetch(`${remoteURL}/reviews?_expand=hospital&_expand=user`)
+export const getAllReviews = (id) => {
+    return fetch(`${remoteURL}/reviews?_expand=hospital&_expand=user&userId=${id}`)
         .then(res => res.json())
 }
 

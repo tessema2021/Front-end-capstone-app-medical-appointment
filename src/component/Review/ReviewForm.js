@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { addReview } from './ReviewManager';
 import { getAllHospitals } from '../Hospital/HospitalManager';
+import "./ReviewList.css"
 
 
 export const ReviewForm = () => {
@@ -9,7 +10,7 @@ export const ReviewForm = () => {
     // Define the initial state of the form inputs with useState()
 
     const [review, setReview] = useState({
-        userId: 1,
+        userId: JSON.parse(sessionStorage.getItem("medical_appointment_user")).id,
         hospitalId: 1,
         howEasyWasToScheduleAppointment: "",
         howLongDidYouWait: "",
@@ -98,8 +99,8 @@ export const ReviewForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="howLongDidYouWait">how long did you wait:</label>
-                    <input type="time" id="howLongDidYouWait" onChange={handleControlledInputChange}
-                        required autoFocus className="form-control" placeholder="time" value={review.howLongDidYouWait} />
+                    <input type="text" id="howLongDidYouWait" onChange={handleControlledInputChange}
+                        required autoFocus className="form-control" placeholder="text" value={review.howLongDidYouWait} />
                 </div>
             </fieldset>
             <fieldset>
@@ -124,7 +125,7 @@ export const ReviewForm = () => {
                 </div>
             </fieldset>
 
-            <button className="btn btn-primary"
+            <button className="save-btn"
                 onClick={handleClickSaveReview}>
                 Save Review
             </button>

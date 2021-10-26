@@ -2,13 +2,13 @@
 const remoteURL = "http://localhost:8088"
 //
 export const getAppointmentById = (appointmentId) => {
-    return fetch(`${remoteURL}/appointments/${appointmentId}?_expand=child&_expand=hospital`)
+    return fetch(`${remoteURL}/appointments/${appointmentId}?_expand=child&_expand=hospital&-expand=user`)
         .then(res => res.json())
 
 }
 
-export const getAllAppointments = () => {
-    return fetch(`${remoteURL}/appointments?_expand=child&_expand=hospital`)
+export const getAllAppointments = (id) => {
+    return fetch(`${remoteURL}/appointments?_expand=child&_expand=hospital&_expand=user&userId=${id}`)
         .then(res => res.json())
 }
 

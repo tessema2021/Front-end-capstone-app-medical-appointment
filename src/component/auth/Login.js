@@ -17,7 +17,7 @@ export const Login = ({ setAuthUser }) => {
 
     const existingUserCheck = () => {
         // If your json-server URL is different, please change it below!
-        return fetch(`http://localhost:8088/users?email=${loginUser.email}`)
+        return fetch(`http://localhost:8088/users?email=${loginUser.email}&name=${loginUser.name}`)
             .then(res => res.json())
             .then(user => user.length ? user[0] : false)
     }
