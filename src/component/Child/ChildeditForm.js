@@ -34,7 +34,7 @@ export const ChildrenEditForm = () => {
         };
         console.log(editedChildren)
         update(editedChildren)
-            .then(() => history.push("/")
+            .then(() => history.push("/children")
                 // history.push pushes this URL onto all the history in the DOM
             )
     }

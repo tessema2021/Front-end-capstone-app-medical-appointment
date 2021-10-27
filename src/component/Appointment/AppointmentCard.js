@@ -13,35 +13,25 @@ export const AppointmentCard = ({ appointment, handleDeleteAppointment }) => {
         return new Date(date).toLocaleDateString();
     }
 
-    const loggedInUser = parseInt(sessionStorage.getItem("medical_appointment_user"));
-    if (appointment.userId === loggedInUser) {
 
-        return (
-            <div className="appointment_card">
-                <><div className="child_name">Full Name :{appointment.child.firstName} {appointment.child.lastName}</div><div className="child_birth">Date of Birth :{appointment.child.dateOfBirth}</div><div className="child_appointment">Reason for appointment :{appointment.reasonForAppointment}</div><div className="hospital_name">Hospital :{appointment.hospital.name}</div><div className="appointment_date">Date :{getReadableDate(appointment.date)}</div><div className="appointment_time">Time :{appointment.time}</div><button className="button-edit" type="button"
-                    onClick={() => history.push(`/appointments/${appointment.id}/edit`)}>
-                    Edit
-                </button><button className="button-delete" type="button" onClick={() => handleDeleteAppointment(appointment.id)}>Delete</button>
+    return (
+        <div className="appointment_card">
+            <><div className="child_name">Full Name :{appointment.child.firstName} {appointment.child.lastName}</div><div className="child_birth">Date of Birth :{getReadableDate(appointment.child.dateOfBirth)}</div><div className="child_appointment">Reason for appointment :{appointment.reasonForAppointment}</div><div className="hospital_name">Hospital :{appointment.hospital.name}</div><div className="appointment_date">Date :{getReadableDate(appointment.date)}</div><div className="appointment_time">Time :{appointment.time}</div><button className="button-edit" type="button"
+                onClick={() => history.push(`/appointments/${appointment.id}/edit`)}>
+                Edit
+            </button><button className="button-delete" type="button" onClick={() => handleDeleteAppointment(appointment.id)}>Delete</button>
 
-                </>
-            </div >
-        )
-    } else {
-        return (
-            <div className="appointment_card">
-                <><div className="child_name">Full Name :{appointment.child.firstName} {appointment.child.lastName}</div><div className="child_birth">Date of Birth :{appointment.child.dateOfBirth}</div><div className="child_appointment">Reason for appointment :{appointment.reasonForAppointment}</div><div className="hospital_name">Hospital :{appointment.hospital.name}</div><div className="appointment_date">Date :{getReadableDate(appointment.date)}</div><div className="appointment_time">Time :{appointment.time}</div>
-                </>
-            </div >
-        )
+            </>
+        </div >
+    )
 
-    }
 }
   /* </div>
-    <div class="flip-card-back">
-        <p>Make sure to show up</p>
-        <p>15 minute early</p>
-        <p>We exacted to see you soon</p>
-    </div>
+<div class="flip-card-back">
+  <p>Make sure to show up</p>
+  <p>15 minute early</p>
+  <p>We exacted to see you soon</p>
+</div>
 </div > */
 // <div class="flip-card">
 //   <div class="flip-card-inner">

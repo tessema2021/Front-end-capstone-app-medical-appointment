@@ -21,7 +21,7 @@ export const ReviewList = () => {
 
     const handleDeleteReview = id => {
         deleteReview(id)
-            .then(() => getAllReviews().then(setReviews));
+            .then(() => getReviews());
     };
 
 
