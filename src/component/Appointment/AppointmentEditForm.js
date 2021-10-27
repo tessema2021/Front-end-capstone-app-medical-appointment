@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useParams, useHistory } from "react-router-dom"
-import { getAppointmentById } from "./AppointmentManager"
+import { getAllAppointments, getAppointmentById } from "./AppointmentManager"
 import { update } from "./AppointmentManager"
 import "./AppointmentEditForm.css"
 import { getAllChildren } from '../Child/ChildManager';
@@ -10,6 +10,8 @@ import { getAllHospitals } from '../Hospital/HospitalManager';
 
 
 export const AppointmentEditForm = () => {
+
+    let user = parseInt(sessionStorage.getItem("current_user"))
     const [appointment, setAppointment] = useState(
         {
 
@@ -36,6 +38,7 @@ export const AppointmentEditForm = () => {
 
         // This is an edit, so we need the id
         const editedAppointment = {
+            userId: JSON.parse(sessionStorage.getItem("medical_appointment_user")).id,
             id: appointmentId,
             childId: appointment.childId,
             reasonForAppointment: appointment.reasonForAppointment,
@@ -46,10 +49,20 @@ export const AppointmentEditForm = () => {
         };
         console.log(editedAppointment)
         update(editedAppointment)
-            .then(() => history.push("/")
+            .then(() => history.push("/appointments")
                 // history.push pushes this URL onto all the history in the DOM
             )
     }
+    //get childeren for the user from children lisst
+    const getUserChildren = () => {
+        return getAllChildren(user).then(response => {
+            setChildren(response)
+        })
+    }
+
+
+
+
     useEffect(() => {
         //load hospital data and setState
         getAllHospitals().then(hospitals => {
@@ -59,9 +72,7 @@ export const AppointmentEditForm = () => {
 
     useEffect(() => {
         //load child data and setState
-        getAllChildren().then(children => {
-            setChildren(children)
-        })
+        getUserChildren();
     }, []);
     // useEffect tells react component it needs to do something after rendering
     useEffect(() => {

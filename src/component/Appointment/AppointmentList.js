@@ -41,7 +41,7 @@ export const AppointmentList = () => {
 
     const handleDeleteAppointment = id => {
         deleteAppointment(id)
-            .then(() => getAllAppointments().then(setAppointments));
+            .then(() => getAppointments());
     };
 
 

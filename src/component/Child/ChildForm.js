@@ -44,7 +44,7 @@ export const ChildForm = () => {
     const handleClickSaveChild = (event) => {
         event.preventDefault()
         addChild(children)
-            .then(() => history.push("/"))
+            .then(() => history.push("/children"))
 
     }
 

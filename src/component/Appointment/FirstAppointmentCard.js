@@ -20,7 +20,7 @@ export const FirstAppointmentCard = ({ appointment, handleDeleteAppointment }) =
             <div class="flip-card-front"> */}
 
             <div className="child_name">Full Name :{appointment.child.firstName} {appointment.child.lastName}</div>
-            <div className="child_birth">Date of Birth :{appointment.child.dateOfBirth}</div>
+            <div className="child_birth">Date of Birth :{getReadableDate(appointment.child.dateOfBirth)}</div>
             <div className="child_appointment">Reason for appointment :{appointment.reasonForAppointment}</div>
             <div className="hospital_name">Hospital :{appointment.hospital.name}</div>
             <div className="appointment_date">Date :{getReadableDate(appointment.date)}</div>

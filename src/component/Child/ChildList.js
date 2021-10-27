@@ -22,7 +22,7 @@ export const ChildrenList = () => {
 
     const handleDeleteChildren = id => {
         deletechild(id)
-            .then(() => getAllChildren().then(setChildren));
+            .then(() => getChildren());
     };
 
 

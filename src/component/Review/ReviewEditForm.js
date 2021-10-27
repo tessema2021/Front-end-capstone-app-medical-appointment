@@ -45,7 +45,7 @@ export const ReviewEditForm = () => {
         };
         console.log(editedReview)
         update(editedReview)
-            .then(() => history.push("/")
+            .then(() => history.push("/reviews")
                 // history.push pushes this URL onto all the history in the DOM
             )
     }
