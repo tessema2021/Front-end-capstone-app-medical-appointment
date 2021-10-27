@@ -66,7 +66,7 @@ export const AppointmentList = () => {
                 {filteredFuture.map(appointment => {
                     console.log(filteredFuture)
                     if (filteredFuture.indexOf(appointment) !== 0) {
-                        return <AppointmentCard key={appointment.id} appointment={appointment} handleDeleteEvent={handleDeleteAppointment} />
+                        return <AppointmentCard key={appointment.id} appointment={appointment} handleDeleteAppointment={handleDeleteAppointment} />
                     } else {
                         return <FirstAppointmentCard key={appointment.id} appointment={appointment} handleDeleteAppointment={handleDeleteAppointment} />
                     }
