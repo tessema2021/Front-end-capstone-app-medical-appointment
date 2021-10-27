@@ -1,6 +1,6 @@
 .review_card {
     width: 350px;
-    height: 300px;
+    height: 310px;
     background-color: cadetblue;
     display: flex;
     flex-flow: row wrap;
