@@ -14,7 +14,8 @@ export const ReviewList = () => {
         return getAllReviews(loggedInUser.id).then(reviewsFromAPI => {
             // We'll do something more interesting with this data soon.
             console.log(reviewsFromAPI);
-            setReviews(reviewsFromAPI);
+            const sortedActivities = reviewsFromAPI.sort((a, b) => new Date(a.date) - new Date(b.date))
+            setReviews(sortedActivities);
         });
     };
 

@@ -20,30 +20,17 @@ export const AppointmentCard = ({ appointment, handleDeleteAppointment }) => {
                 onClick={() => history.push(`/appointments/${appointment.id}/edit`)}>
                 Edit
             </button><button className="button-delete" type="button" onClick={() => handleDeleteAppointment(appointment.id)}>Delete</button>
-
             </>
         </div >
     )
 
 }
-  /* </div>
-<div class="flip-card-back">
-  <p>Make sure to show up</p>
-  <p>15 minute early</p>
-  <p>We exacted to see you soon</p>
-</div>
-</div > */
-// <div class="flip-card">
-//   <div class="flip-card-inner">
-//     <div class="flip-card-front">
-//       
-//     </div>
-//     <div class="flip-card-back">
-//       <h1>John Doe</h1> 
-//       <p>Architect & Engineer</p> 
-//       <p>We love that guy</p>
-//     </div>
-//   </div>
+
+//  <div class="thecard">
+//   <p>Make sure to show up</p>
+//   <p>15 minute early</p>
+//   <p>We exacted to see you soon</p>
 // </div>
+
 
 

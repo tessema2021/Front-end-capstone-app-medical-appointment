@@ -10,7 +10,7 @@ export const ReviewCard = ({ review, handleDeleteReview }) => {
         return new Date(date).toLocaleDateString();
     }
 
-    // const loggedInUser = parseInt(sessionStorage.getItem("medical_appointment_user"));
+    // const loggedInUser = JSON.parse(sessionStorage.getItem("medical_appointment_user"))
 
 
     // if (review.userId === loggedInUser) {
