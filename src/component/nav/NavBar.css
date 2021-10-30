@@ -16,3 +16,6 @@
 li {
   list-style: none;
 }
+li span {
+  color: rgb(6, 63, 63);
+}

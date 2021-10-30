@@ -28,14 +28,19 @@ export const NavBar = ({ clearUser, isAuthenticated }) => {
 
                 {clearUser, isAuthenticated ?
                     <li className="nav-item">
-                        <Link className="nav-link" to="/appointments">Appointment</Link>
+                        <Link className="nav-link" to="/children">Children</Link>
                     </li>
                     : null}
                 {clearUser, isAuthenticated ?
                     <li className="nav-item">
-                        <Link className="nav-link" to="/children">Children</Link>
+                        <Link className="nav-link" to="/appointments">Appointment</Link>
                     </li>
                     : null}
+                {/* {clearUser, isAuthenticated ?
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/children">Children</Link>
+                    </li>
+                    : null} */}
                 {clearUser, isAuthenticated ?
                     <li className="nav-item">
                         <Link className="nav-link" to="/reviews">Review</Link>
