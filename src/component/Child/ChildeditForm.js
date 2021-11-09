@@ -79,7 +79,7 @@ export const ChildrenEditForm = () => {
                             id="dateOfBirth"
                             value={children.dateOfBirth}
                         />
-                        <label htmlFor="date">Date Of Birth</label>
+                        <label htmlFor="dateOfBirth">Date Of Birth</label>
 
                     </div>
                     <div className="alignRight">

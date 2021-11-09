@@ -9,7 +9,12 @@ export const ChildCard = ({ children, handleDeleteChildren }) => {
     const history = useHistory();
     //changes the date human readable format
     const getReadableDate = (date) => {
-        return new Date(date).toLocaleDateString();
+        console.log("date", date)
+
+        const FormatedDate = new Date(date + "T12:00:00"
+        ).toLocaleDateString();
+        console.log("formated date", FormatedDate)
+        return FormatedDate;
     }
     return (
 

@@ -8,10 +8,10 @@ export const ReviewList = () => {
 
     const [reviews, setReviews] = useState([]);
     const history = useHistory();
-    const loggedInUser = JSON.parse(sessionStorage.getItem("medical_appointment_user"))
+    //const loggedInUser = JSON.parse(sessionStorage.getItem("medical_appointment_user"))
 
     const getReviews = () => {
-        return getAllReviews(loggedInUser.id).then(reviewsFromAPI => {
+        return getAllReviews().then(reviewsFromAPI => {
             // We'll do something more interesting with this data soon.
             console.log(reviewsFromAPI);
             const sortedActivities = reviewsFromAPI.sort((a, b) => new Date(a.date) - new Date(b.date))
