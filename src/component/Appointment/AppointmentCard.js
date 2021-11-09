@@ -10,9 +10,14 @@ export const AppointmentCard = ({ appointment, handleDeleteAppointment }) => {
     const history = useHistory();
     // allows the timestamp to be put into a human readable format
     const getReadableDate = (date) => {
-        return new Date(date).toLocaleDateString();
-    }
 
+        console.log("date", date)
+
+        const FormatedDate = new Date(date + "T12:00:00"
+        ).toLocaleDateString();
+        console.log("formated date", FormatedDate)
+        return FormatedDate;
+    }
 
     return (
         <div className="appointment_card">
